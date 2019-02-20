@@ -16,7 +16,7 @@ import Util from '../util'
 
 const findFn = Polyfill.find
 const findOne = Polyfill.findOne
-const nodeText = 3
+const NODE_TEXT = 3
 
 const SelectorEngine = {
   matches(element, selector) {
@@ -55,9 +55,9 @@ const SelectorEngine = {
     }
 
     const parents = []
-
     let ancestor = element.parentNode
-    while (ancestor && ancestor.nodeType === Node.ELEMENT_NODE && ancestor.nodeType !== nodeText) {
+
+    while (ancestor && ancestor.nodeType === Node.ELEMENT_NODE && ancestor.nodeType !== NODE_TEXT) {
       if (this.matches(ancestor, selector)) {
         parents.push(ancestor)
       }
@@ -82,9 +82,9 @@ const SelectorEngine = {
     }
 
     const siblings = []
-
     let previous = element.previousSibling
-    while (previous && previous.nodeType === Node.ELEMENT_NODE && previous.nodeType !== nodeText) {
+
+    while (previous && previous.nodeType === Node.ELEMENT_NODE && previous.nodeType !== NODE_TEXT) {
       if (this.matches(previous, selector)) {
         siblings.push(previous)
       }
